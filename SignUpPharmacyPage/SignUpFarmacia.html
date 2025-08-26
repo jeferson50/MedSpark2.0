@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MedSpark - Login</title>
+  <title>MedSpark - Sign up</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="SignUp.js"></script>
   <style>
@@ -18,21 +18,25 @@
       theme: {
         extend: {
           colors: {
-            'midnight-green': '#04474B',
-            'gamboge': '#E4981E',
-            'silver': '#B5B5AE',
+            'midnight-green': '#03474a',
+            'gamboge': '#e4981e',
+            'silver': '#9E9B9D',
             'gold': '#B47A0E',
+            'sky-blue': '#03898E45',
           }
         }
       }
     }
   </script>
 </head>
-<body>
-  <nav class="bg-midnight-green shadow-md">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<body class="bg-sky-blue"></body>
+  <nav class="bg-midnight-green">
+    <div class="max-w-9xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16">
         <div class="flex items-center">
+          <div class="hidden md:block">
+          <a href="../WelcomePage/Welcome.html" class="font-bold text-xl text-white"><img src="../Images/MedSparkLogo2.png" alt="MedSpark Logo" class="w-24 h-10 sm:h-12 md:h-14 lg:h-16 xl:h-24 object-contain mr-3"></a>
+        </div>
           <a href="../WelcomePage/Welcome.html" class="font-bold text-xl text-white">MedSpark</a>
         </div>
         <div class="hidden md:block">
@@ -48,14 +52,13 @@
   </nav>
 
   <main class="py-12">
-    <div class="text-center mb-8">
+    <div class="text-left mb-8">
       <h1 class="text-3xl font-bold text-black">Sign Up with MedSpark</h1>
     </div>
     <div class="flex flex-row justify-center items-center gap-12 px-4 max-w-6xl mx-auto">
-      
-      <div class="bg-white p-8 rounded-2xl shadow-2xl w-full lg:w-1/2 text-center animate-fadeIn flex flex-col">
+      <div class="bg-white p-8 rounded-2xl shadow-2xl w-full lg:w-1/2 text-left animate-fadeIn flex flex-col">
         <div class="flex justify-center mb-4">
-          <img src="../Images/Pharmacy Avatar.png" alt="avatar" class="w-20">
+          <img src="../Images/Avatar.png" alt="avatar" class="w-20">
         </div>
         <h2 class="text-2xl font-bold mb-4 text-black">Sign up</h2>
         <form class="flex-grow flex flex-col justify-center">
@@ -63,7 +66,7 @@
             <input type="text" placeholder="Name of the clinic or pharmacy" 
                   class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:border-gamboge focus:ring-gamboge focus:outline-none mb-2 text-sm" required>
             
-            <input type="number" placeholder="Tax identification number" 
+            <input type="text" id="tax-id-input" maxlength="17" placeholder="Tax identification number" 
                   class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:border-gamboge focus:ring-gamboge focus:outline-none mb-2 text-sm" required>
 
             <input type="text" placeholder="Department" 
@@ -89,7 +92,7 @@
           </div>
             
           <button type="button" 
-                  class="w-full bg-emerald-500 text-white py-2 rounded-lg font-semibold hover:bg-emerald-600 transition mt-4 text-sm" onclick="submitForm()" id="button">Entrar</button>
+                  class="w-full bg-gamboge text-white py-2 rounded-lg font-semibold hover:bg-gold transition mt-4 text-sm" onclick="submitForm()" id="button">Entrar</button>
         </form>
       </div>
       
@@ -107,29 +110,44 @@
   <script>
     const phoneInput = document.getElementById('phone-input');
     const postalCodeInput = document.getElementById('postal-code-input');
+    const taxIdInput = document.getElementById('tax-id-input');
 
     phoneInput.addEventListener('input', (e) => {
       let input = e.target.value.replace(/\D/g, '');
-      if (input.length > 8) {
+      if(input.length > 8){
         input = input.substring(0, 8);
       }
-      if (input.length > 4) {
+      if(input.length > 4){
         input = input.substring(0, 4) + '-' + input.substring(4);
       }
       e.target.value = input;
-    });
+});
+
 
     postalCodeInput.addEventListener('input', (e) => {
       let value = e.target.value.replace(/[^\d]/g, '');
-      if (value.length > 5) {
+      if(value.length > 5){
         value = value.slice(0, 5);
       }
-      if (value.length > 0) {
+      if(value.length > 0){
         value = '#' + value;
       }
       e.target.value = value;
-    });
-  </script>
+});
+
+taxIdInput.addEventListener('input', (e) => {
+  let value = e.target.value.replace(/\D/g, '');
+  if (value.length > 16) value = value.slice(0, 16);
+
+  let formatted = '';
+  if (value.length > 0) formatted += value.slice(0, 4);
+  if (value.length > 4) formatted += '-' + value.slice(4, 10);
+  if (value.length > 10) formatted += '-' + value.slice(10, 13);
+  if (value.length > 13) formatted += '-' + value.slice(13, 14);
+
+  e.target.value = formatted;
+});
+</script>
 </body>
 </html>
 
