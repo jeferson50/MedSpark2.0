@@ -1,3 +1,6 @@
+const clerk = new Clerk(process.env.CLERK_PUBLISHABLE_KEY);
+clerk.load();
+
 function startLoading() {
     document.getElementById("loading-screen").classList.remove("hidden");
     setTimeout(() => {
@@ -17,3 +20,4 @@ const button = document.getElementById("button");
   form.submit();
   startLoading();
 }
+
