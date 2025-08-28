@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Directory</title>
+     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body>
+    <nav class="bg-teal-950 shadow-md">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <div class="flex items-center">
+          <a href="../WelcomePage/Welcome.html" class="font-bold text-xl text-white">MedSpark</a>
+        </div>
+        <div class="hidden md:block">
+          <div class="ml-10 flex items-baseline space-x-4">
+            <a href="Home.html" class="group text-white transition duration-300 hover:text-silver">Home<span class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-silver"></span></a>
+            <a href="Accounts.html" class="group text-white transition duration-300 hover:text-silver">Accounts<span class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-silver"></span></a>
+            <a href="refund code.html" class="group text-white transition duration-300 hover:text-silver">Refund code<span class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-silver"></span></a>
+            <button class="bg-yellow-600 text-white px-3 py-2 rounded-md text-sm font-medium hover:bg-gold-500" href="signUp.html">Login</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+    <div class="py-8 px-30">
+        <p class="text-4xl font-bold">Directory of pharmacies and clinics</p>
+        <p class="text-teal-700">Find healthcare providers partnering with MedSpark for easy reimbursement.</p>
+
+        <br>
+
+        <input type="search" id="searchInput" class="px-4 py-2 w-full focus:outline-none bg-blue-100 rounded" placeholder="Search...">
+<ul id="itemList" class="mt-4 space-y-2 hidden">
+  <li class="bg-white p-2 rounded">Comprehensive Wellness Clinic</li>
+  <li class="bg-white p-2 rounded">Vitalis Medical Center</li>
+  <li class="bg-white p-2 rounded">Family Health Clinic</li>
+  <li class="bg-white p-2 rounded">Total Health Pharmacy</li>
+  <li class="bg-white p-2 rounded">Vitalis Pharmacy</li>
+  <li class="bg-white p-2 rounded">Family Pharmacy</li>
+</ul>
+    </div>
+
+<br>
+<br>
+
+    <div class=" px-30 flex">
+        <p class="text-xl font-bold">Clinics</p>
+    </div>
+        
+    <div class="flex px-20 py-5">
+        <div class="result-card">
+            <img src="Directory1.png" alt="" class="rounded px-4">
+            <p>Comprehensive Wellness Clinic</p>
+            <p class="text-teal-700">Specialists in general medicine and wellness.</p>
+        </div>
+
+        <div class="result-card">
+            <img src="DIrectory5.png" alt="" class="rounded px-4">
+            <p>Vitalis Medical Center</p>
+            <p class="text-teal-700">Vitalis Medical Center</p>
+        </div>
+
+        <div class="result-card">
+            <img src="DIrectory6.png" alt="" class="rounded px-4">
+            <p>Family Health Clinic</p>
+            <p class="text-teal-700">Focus on the health of the whole family.</p>
+        </div>
+    </div>
+
+    <br>
+    <br>
+    <br>
+
+    <div class=" px-30 flex">
+        <p class="text-xl font-bold">Pharmacies</p>
+    </div>
+
+    <div class="flex px-20 py-5">
+        <div class="result-card">
+            <img src="Directory4.png" alt="" class="rounded px-4">
+            <p>Total Health Pharmacy</p>
+            <p class="text-teal-700">Wide range of medicines and services.</p>
+        </div>
+
+        <div class="result-card">
+            <img src="Diretory2.png" alt="" class="rounded px-4">
+            <p>Vitalis Pharmacy</p>
+            <p class="text-teal-700">Specialized medications and advice.</p>
+        </div>
+
+        <div class="result-card">
+            <img src="directory3.png" alt="" class="rounded px-4">
+            <p>Family Pharmacy</p>
+            <p class="text-teal-700">Trusted pharmacy for the community.</p>
+        </div>
+    </div>
+
+<script>
+  const searchInput = document.getElementById('searchInput');
+  const resultCards = document.getElementsByClassName('result-card');
+
+  searchInput.addEventListener('input', function () {
+    const query = this.value.toLowerCase();
+    let hasResults = false;
+
+    for (let card of resultCards) {
+      const text = card.textContent.toLowerCase();
+      const match = text.includes(query);
+      card.style.display = match ? '' : 'none';
+      if (match) hasResults = true;
+    }
+
+    // Opcional: mostrar mensaje si no hay resultados
+    const noResults = document.getElementById('noResults');
+    if (noResults) {
+      noResults.classList.toggle('hidden', hasResults || query === '');
+    }
+  });
+</script>
+
+<p id="noResults" class="mt-4 text-gray-500 hidden">No se encontraron resultados.</p>
+</body>
+</html>
