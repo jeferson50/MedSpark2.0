@@ -1,0 +1,1 @@
+import { SplitText } from './components/TextAnimations/SplitText.jsx';
