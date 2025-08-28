@@ -6,6 +6,7 @@ const amountText=row.children[2].textContent.trim()
 const amount=parseFloat(amountText.replace('$','').replace('-',''))
 if(amountText.includes('-')){total-=amount}else{total+=amount}
 })
+
 const balanceElement=document.querySelector('.text-2xl.text-green-600')
 balanceElement.style.transition='transform 0.3s ease'
 balanceElement.style.transform='scale(1.1)'
