@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MedSpark - Sign up</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    body {
+      background-color: #FFFFFF;
+      min-height: 100vh;
+    }
+  </style>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'midnight-green': '#03474a',
+            'gamboge': '#e4981e',
+            'silver': '#9E9B9D',
+            'gold': '#B47A0E',
+            'sky-blue': '#03898E45',
+          }
+        }
+      }
+    }
+  </script>
+
+  <script src="SignUp" defer></script>
+</head>
+<body class="bg-sky-blue">
+
+  <nav class="bg-midnight-green">
+    <div class="max-w-9xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <div class="flex items-center">
+          <div class="hidden md:block">
+            <a href="../WelcomePage/Welcome.html" class="font-bold text-xl text-white">
+              <img src="../Images/MedSparkLogo2.png" alt="MedSpark Logo" class="w-24 h-10 sm:h-12 md:h-14 lg:h-16 xl:h-24 object-contain mr-3">
+            </a>
+          </div>
+          <a href="../WelcomePage/Welcome.html" class="font-bold text-xl text-white">MedSpark</a>
+        </div>
+        <div class="hidden md:block">
+          <div class="ml-10 flex items-baseline space-x-4">
+            <a href="../WelcomePage/Welcome.html" class="group text-white transition duration-300 hover:text-silver">Services<span class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-silver"></span></a>
+            <a href="#" class="group text-white transition duration-300 hover:text-silver">About<span class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-silver"></span></a>
+            <a href="#" class="group text-white transition duration-300 hover:text-silver">Contact<span class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-silver"></span></a>
+            <a href="../Login/login.html"
+            class="bg-gamboge text-white px-3 py-2 rounded-md text-sm font-medium hover:bg-gold">Login</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+    <div class="py-8 px-30">
+        <p class="text-4xl font-bold">Directory of pharmacies and clinics</p>
+        <p class="text-teal-700">Find healthcare providers partnering with MedSpark for easy reimbursement.</p>
+
+        <br>
+
+        <input type="search" id="searchInput" class="px-4 py-2 w-full focus:outline-none bg-blue-100 rounded" placeholder="Search...">
+  <ul id="itemList" class="mt-4 space-y-2 hidden">
+  <li class="bg-white p-2 rounded">Comprehensive Wellness Clinic</li>
+  <li class="bg-white p-2 rounded">Vitalis Medical Center</li>
+  <li class="bg-white p-2 rounded">Family Health Clinic</li>
+  <li class="bg-white p-2 rounded">Total Health Pharmacy</li>
+  <li class="bg-white p-2 rounded">Vitalis Pharmacy</li>
+  <li class="bg-white p-2 rounded">Family Pharmacy</li>
+  </ul>
+    </div>
+
+<br>
+<br>
+
+    <div class="px-30 flex justify-center">
+        <p class="text-xl font-bold">Clinics</p>
+    </div>
+        
+    <div class="flex px-20 py-5 text-center">
+        <div class="result-card  mr-3">
+            <img src="../Images/Directory1.png" alt="" class="rounded-2xl">
+            <p>Comprehensive Wellness Clinic</p>
+            <p class="text-teal-700">Specialists in general medicine and wellness.</p>
+        </div>
+
+        <div class="result-card mr-3">
+            <img src="../Images/DIrectory5.png" alt="" class="rounded-2xl">
+            <p>Vitalis Medical Center</p>
+            <p class="text-teal-700">Vitalis Medical Center</p>
+        </div>
+
+        <div class="result-card mr-3">
+            <img src="../Images/DIrectory6.png" alt="" class="rounded-2xl">
+            <p>Family Health Clinic</p>
+            <p class="text-teal-700">Focus on the health of the whole family.</p>
+        </div>
+    </div>
+
+    <br>
+    <br>
+    <br>
+
+    <div class="px-30 flex justify-center">
+        <p class="text-xl font-bold">Pharmacies</p>
+    </div>
+
+    <div class="flex px-20 py-5">
+        <div class="result-card mr-3">
+            <img src="../Images/Directory4.png" alt="" class="rounded-2xl">
+            <p>Total Health Pharmacy</p>
+            <p class="text-teal-700">Wide range of medicines and services.</p>
+        </div>
+
+        <div class="result-card mr-3">
+            <img src="../Images/Diretory2.png" alt="" class="rounded-2xl">
+            <p>Vitalis Pharmacy</p>
+            <p class="text-teal-700">Specialized medications and advice.</p>
+        </div>
+
+        <div class="result-card mr-3">
+            <img src="../Images/Directory3.png" alt="" class="rounded-2xl">
+            <p>Family Pharmacy</p>
+            <p class="text-teal-700">Trusted pharmacy for the community.</p>
+        </div>
+    </div>
+
+<script>
+  const searchInput = document.getElementById('searchInput');
+  const resultCards = document.getElementsByClassName('result-card');
+
+  searchInput.addEventListener('input', function () {
+    const query = this.value.toLowerCase();
+    let hasResults = false;
+
+    for (let card of resultCards) {
+      const text = card.textContent.toLowerCase();
+      const match = text.includes(query);
+      card.style.display = match ? '' : 'none';
+      if (match) hasResults = true;
+    }
+
+    const noResults = document.getElementById('noResults');
+    if (noResults) {
+      noResults.classList.toggle('hidden', hasResults || query === '');
+    }
+  });
+</script>
+
+<p id="noResults" class="mt-4 text-gray-500 hidden">Not found any match</p>
+</body>
+</html>

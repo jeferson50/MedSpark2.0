@@ -1,0 +1,149 @@
+<!DOCTYPE html>  
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MedSpark</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { darkMode: "class" };
+  </script>
+  <script src="main.js"></script>
+</head>
+<body class="font-sans text-gray-800 bg-white dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300">
+ 
+<header class="flex justify-between items-center px-4 py-4 border-b border-gray-200 sticky top-0 bg-white dark:bg-gray-900 dark:border-gray-700 z-50">
+  <img src="../Images/MedSparkLogo2.png" alt="MedSpark Logo" class="h-24 w-auto px-6">
+ 
+  <nav class="hidden md:flex gap-6 text-gray-700 dark:text-gray-300 text-sm font-bold">
+    <a href="#" class="hover:text-black dark:hover:text-white">Benefits</a>
+    <a href="#" class="hover:text-black dark:hover:text-white">Advantages</a>
+    <a href="#" class="hover:text-black dark:hover:text-white">About Us</a>
+    <a href="#" class="hover:text-black dark:hover:text-white">Alliances</a>
+  </nav>
+ 
+  <div class="flex gap-3 text-sm font-bold items-center">
+    <a href="Login.html" class="px-4 py-2 rounded-md bg-emerald-700 text-white hover:bg-emerald-800">Log In</a>
+    <a href="#" onclick="startLoading()" 
+       class="px-4 py-2 rounded-md border border-gray-300 hover:bg-gray-100 dark:border-gray-600 dark:hover:bg-gray-800 dark:text-gray-200">Sign in</a>
+    <button id="darkModeToggle" 
+            class="px-3 py-2 rounded-md border border-gray-300 bg-gray-100 hover:bg-gray-200 text-gray-800 
+                   dark:bg-gray-700 dark:text-white dark:border-gray-500 dark:hover:bg-gray-600 transition">
+      🌙
+    </button>
+  </div>
+</header>
+
+<center>
+  <section class="relative max-w-6xl mx-auto mt-6 px-4">
+    <div class="relative rounded-lg overflow-hidden">
+      <img src="../Images/Nurse.png" alt="Nurse">
+    </div>
+  </section>
+</center>
+ 
+<section class="max-w-6xl mx-auto px-4 mt-12">
+  <h2 class="text-2xl font-bold text-black-900 dark:text-white">Benefits for Clinics and Pharmacies</h2>
+  <p class="mt-3 text-gray-600 dark:text-gray-300 text-base leading-relaxed">
+    MedSpark offers a comprehensive platform that streamlines reimbursements, enhances patient satisfaction, and boosts operational efficiency.
+  </p>
+ 
+  <div class="grid md:grid-cols-3 gap-6 mt-8">
+    <!-- Card 1 -->
+    <div class="p-6 border rounded-lg hover:shadow-sm transition dark:border-gray-700 dark:bg-gray-800">
+      <svg class="w-8 h-8 text-emerald-700 mb-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 0 0118 0z"/>
+      </svg>
+      <h3 class="font-semibold text-lg text-gray-900 dark:text-white">Simplified Reimbursement Process</h3>
+      <p class="mt-2 text-blue-600 dark:text-blue-400 text-sm leading-relaxed">Our intuitive platform streamlines the reimbursement workflow, reducing paperwork and saving time for clinics.</p>
+    </div>
+    <!-- Card 2 -->
+    <div class="p-6 border rounded-lg hover:shadow-sm transition dark:border-gray-700 dark:bg-gray-800">
+      <svg class="w-8 h-8 text-emerald-700 mb-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+      </svg>
+      <h3 class="font-semibold text-lg text-gray-900 dark:text-white">Enhanced Patient Satisfaction</h3>
+      <p class="mt-2 text-blue-600 dark:text-blue-400 text-sm leading-relaxed">By reducing reimbursement delays, patients experience greater satisfaction, leading to increased trust and loyalty.</p>
+    </div>
+    <!-- Card 3 -->
+    <div class="p-6 border rounded-lg hover:shadow-sm transition dark:border-gray-700 dark:bg-gray-800">
+      <svg class="w-8 h-8 text-emerald-700 mb-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 0 0118 0z"/>
+      </svg>
+      <h3 class="font-semibold text-lg text-gray-900 dark:text-white">Improved Operational Efficiency</h3>
+      <p class="mt-2 text-blue-600 dark:text-blue-400 text-sm leading-relaxed">MedSpark's automation tools reduce errors and ensure you can focus on patient care.</p>
+    </div>
+  </div>
+</section>
+ 
+<section class="max-w-6xl mx-auto px-4 mt-16">
+  <h2 class="text-2xl font-bold text-gray-900 dark:text-white">Advantages of Partnering with MedSpark</h2>
+  <p class="mt-3 text-gray-600 dark:text-gray-300 text-base leading-relaxed">
+    Collaborating with MedSpark provides you access to a network of patients, marketing tools, and dedicated support to help you grow.
+  </p>
+ 
+  <div class="grid md:grid-cols-3 gap-6 mt-8">
+    <!-- Advantage 1 -->
+    <div class="rounded-lg overflow-hidden border hover:shadow-lg transition dark:border-gray-700 dark:bg-gray-800">
+      <img src="../Images/doctor.png" alt="Patients Network" class="w-full h-48 object-cover transform transition-transform duration-300 hover:scale-105">
+      <div class="p-5">
+        <h3 class="font-semibold text-lg text-gray-900 dark:text-white">Access to a Broad Patient Network</h3>
+        <p class="mt-2 text-blue-600 dark:text-blue-400 text-sm leading-relaxed">Connect with more patients and grow your reach through our extensive network.</p>
+      </div>
+    </div>
+    <!-- Advantage 2 -->
+    <div class="rounded-lg overflow-hidden border hover:shadow-lg transition dark:border-gray-700 dark:bg-gray-800">
+      <img src="../Images/image.png" alt="Support" class="w-full h-48 object-cover transform transition-transform duration-300 hover:scale-105">
+      <div class="p-5">
+        <h3 class="font-semibold text-lg text-gray-900 dark:text-white">Dedicated and Personalized Support</h3>
+        <p class="mt-2 text-blue-600 dark:text-blue-400 text-sm leading-relaxed">Our expert team is here to guide you every step of the way.</p>
+      </div>
+    </div>
+    <!-- Advantage 3 -->
+    <div class="rounded-lg overflow-hidden border hover:shadow-lg transition dark:border-gray-700 dark:bg-gray-800">
+      <img src="../Images/Tools.png" alt="Marketing Tools" class="w-full h-48 object-cover transform transition-transform duration-300 hover:scale-105">
+      <div class="p-5">
+        <h3 class="font-semibold text-lg text-gray-900 dark:text-white">Marketing Tools</h3>
+        <p class="mt-2 text-blue-600 dark:text-blue-400 text-sm leading-relaxed">Use our advanced marketing strategies to attract and retain more clients.</p>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<footer class="mt-16 py-6 border-t border-gray-200 dark:border-gray-700 text-center text-sm">
+  <div class="flex justify-center gap-6">
+    <a href="#" class="text-sky-400 hover:text-sky-600">Terms of Service</a>
+    <a href="#" class="text-sky-400 hover:text-sky-600">Privacy Policy</a>
+    <a href="#" class="text-sky-400 hover:text-sky-600">Contact Us</a>
+  </div>
+  <div class="mt-4">
+    <a href="#" class="text-green-400 hover:text-green-600">
+      2025 MedSpark. All rights reserved.
+    </a>
+  </div>
+</footer>
+
+<!-- Loading Screen con logo -->
+<div id="loading-screen" class="hidden fixed inset-0 bg-white dark:bg-gray-900 flex flex-col items-center justify-center z-50">
+  <img src="../Images/MedSparkLogo2.png" alt="MedSpark Logo" class="w-28 animate-bounce">
+  <p class="mt-4 text-gray-700 dark:text-gray-200 font-semibold animate-pulse">Loading...</p>
+</div>
+
+<script>
+  function startLoading() {
+    document.getElementById("loading-screen").classList.remove("hidden");
+    setTimeout(() => {
+      window.location.href = "choose-signup.html";
+    }, 3000);
+  }
+
+  // Dark Mode Toggle
+  const darkToggle = document.getElementById("darkModeToggle");
+  darkToggle.addEventListener("click", () => {
+    document.documentElement.classList.toggle("dark");
+    darkToggle.textContent = document.documentElement.classList.contains("dark") ? "☀️" : "🌙";
+  });
+</script>
+ 
+</body>
+</html>
