@@ -30,4 +30,3 @@ function startLoading() {
   }, 3000);
 }
 
-
