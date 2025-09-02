@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MedSpark - Sign up</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    body {
+      background-color: #FFFFFF;
+      min-height: 100vh;
+    }
+  </style>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'midnight-green': '#03474a',
+            'gamboge': '#e4981e',
+            'silver': '#9E9B9D',
+            'gold': '#B47A0E',
+            'sky-blue': '#03898E45',
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Clerk script -->
+  <script async crossorigin="anonymous" 
+    data-clerk-publishable-key="pk_test_Y2VydGFpbi10dW5hLTUwLmNsZXJrLmFjY291bnRzLmRldiQ"
+    src="https://cdn.jsdelivr.net/npm/@clerk/clerk-js@latest/dist/clerk.browser.js">
+  </script>
+</head>
+<body class="bg-sky-blue">
+
+  <nav class="bg-midnight-green">
+    <div class="max-w-9xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <div class="flex items-center">
+          <div class="hidden md:block">
+            <a href="../WelcomePage/Welcome.html" class="font-bold text-xl text-white">
+              <img src="../Images/MedSparkLogo2.png" alt="MedSpark Logo" class="w-24 h-10 sm:h-12 md:h-14 lg:h-16 xl:h-24 object-contain mr-3">
+            </a>
+          </div>
+          <a href="../WelcomePage/Welcome.html" class="font-bold text-xl text-white">MedSpark</a>
+        </div>
+        <div class="hidden md:block">
+          <div class="ml-10 flex items-baseline space-x-4">
+            <a href="../WelcomePage/Welcome.html" class="group text-white transition duration-300 hover:text-silver">Services<span class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-silver"></span></a>
+            <a href="#" class="group text-white transition duration-300 hover:text-silver">About<span class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-silver"></span></a>
+            <a href="#" class="group text-white transition duration-300 hover:text-silver">Contact<span class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-silver"></span></a>
+            <a href="../Login/login.html"
+            class="bg-gamboge text-white px-3 py-2 rounded-md text-sm font-medium hover:bg-gold">Login</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- MAIN -->
+  <main class="py-12">
+    <div class="text-center mb-8">
+      <h1 class="text-3xl font-bold text-black">Sign Up with MedSpark</h1>
+    </div>
+    <div class="flex flex-row justify-between items-center gap-12 px-4 max-w-6xl mx-auto">
+      
+      <div class="bg-white p-8 rounded-2xl shadow-2xl w-full lg:w-1/2 text-left flex flex-col">
+        <div class="flex justify-center mb-4">
+          <img src="../Images/Avatar.png" alt="avatar" class="w-20">
+        </div>
+        <h2 class="text-2xl font-bold mb-4 text-black flex justify-center">Welcome</h2>
+
+        <!-- Aquí se monta el componente de Clerk -->
+        <div id="sign-up"></div>
+      </div>
+      
+      <!-- Imagen lateral -->
+      <div class="hidden lg:block w-1/2">
+        <img src="https://images.pexels.com/photos/3938022/pexels-photo-3938022.jpeg" alt="Medical background" class="rounded-2xl shadow-2xl h-full w-full object-cover">
+      </div>
+    </div>
+  </main>
+
+  <script>
+    window.addEventListener("load", async () => {
+      await Clerk.load();
+      Clerk.mountSignUp(document.getElementById("sign-up"), {
+        appearance: {
+          elements: {
+            formButtonPrimary: 
+              "bg-gamboge text-white font-semibold py-2 px-4 rounded-lg hover:bg-gold transition",
+            card: 
+              "shadow-2xl rounded-2xl border border-silver p-6",
+            headerTitle: 
+              "text-midnight-green text-2xl font-bold text-center",
+            headerSubtitle: 
+              "text-silver text-center mb-4",
+            formFieldInput: 
+              "w-full px-4 py-2 rounded-lg border border-gray-300 focus:border-gamboge focus:ring-gamboge text-sm",
+            footerActionLink: 
+              "text-gamboge font-semibold hover:text-gold transition"
+          },
+        },
+      });
+    });
+  </script>
+</body>
+</html>
