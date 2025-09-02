@@ -13,6 +13,21 @@
       overflow: hidden;
     }
   </style>
+<body class="flex">
+
+  <div id="sidebar"></div>
+  <main class="flex-1 p-6">
+    <h1 class="text-2xl font-bold">CashBack</h1>
+  </main>
+
+  <script>
+    fetch("sidebar.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("sidebar").innerHTML = data;
+      });
+  </script>
+</body>
 
   <script>
     tailwind.config = {
@@ -33,7 +48,6 @@
   <script src="dui.js" defer></script>
 </head>
 <body class="bg-sky-blue">
-
   <nav class="bg-midnight-green">
     <div class="max-w-9xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16">
@@ -69,5 +83,6 @@
     </div>
   </main>
   </div>
+  
 </body>
 </html>
