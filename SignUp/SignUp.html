@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MedSpark - Sign up</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    body {
+      background-color: #FFFFFF;
+      min-height: 100vh;
+      overflow: hidden;
+    }
+  </style>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'midnight-green': '#03474a',
+            'gamboge': '#e4981e',
+            'silver': '#9E9B9D',
+            'gold': '#B47A0E',
+            'sky-blue': '#03898E45',
+          }
+        }
+      }
+    }
+  </script>
+
+  <script src="SignUp" defer></script>
+</head>
+<body class="bg-sky-blue">
+
+  <nav class="bg-midnight-green">
+    <div class="max-w-9xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <div class="flex items-center">
+          <div class="hidden md:block">
+            <a href="../WelcomePage/Welcome.html" class="font-bold text-xl text-white">
+              <img src="../Images/MedSparkLogo2.png" alt="MedSpark Logo" class="w-24 h-10 sm:h-12 md:h-14 lg:h-16 xl:h-24 object-contain mr-3">
+            </a>
+          </div>
+          <a href="../WelcomePage/Welcome.html" class="font-bold text-xl text-white">MedSpark</a>
+        </div>
+        <div class="hidden md:block">
+          <div class="ml-10 flex items-baseline space-x-4">
+            <a href="../WelcomePage/Welcome.html" class="group text-white transition duration-300 hover:text-silver">Services<span class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-silver"></span></a>
+            <a href="#" class="group text-white transition duration-300 hover:text-silver">About<span class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-silver"></span></a>
+            <a href="#" class="group text-white transition duration-300 hover:text-silver">Contact<span class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-silver"></span></a>
+            <a href="../Login/login.html"
+            class="bg-gamboge text-white px-3 py-2 rounded-md text-sm font-medium hover:bg-gold">Login</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+ 
+  <div class="flex justify-center items-center min-h-screen bg-sky-blue">
+    <div class="bg-white p-8 rounded-2xl shadow-lg w-full max-w-md text-center">
+      <h2 class="text-xl font-semibold text-center text-gray-900 mb-6">Sign up in MedSpark</h2>
+      <div class="flex justify-center mb-4">
+          <img src="../Images/userAvatar.png" alt="avatar" class="w-20">
+        </div>
+      <form class="space-y-4">
+        <input type="email" placeholder="Email" id="email" class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:border-gamboge focus:ring-gamboge focus:outline-none mb-2 text-sm">
+        <input type="password" placeholder="Password" id="password" class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:border-gamboge focus:ring-gamboge focus:outline-none mb-2 text-sm">
+        <input type="text" placeholder="Name" id="name" class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:border-gamboge focus:ring-gamboge focus:outline-none mb-2 text-sm">
+        <input type="text" maxlength="10" placeholder="DUI" id="dui" class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:border-gamboge focus:ring-gamboge focus:outline-none mb-2 text-sm">
+        <div class="mt-5">
+        <a href="../Home/Home.html"
+        class="bg-gamboge text-white px-3 py-2 mt-10 rounded-md text-sm font-medium hover:bg-gold">Sign Up</a>
+        </div>
+      </form>
+ 
+      <p class="text-center text-sm text-gray-600 mt-4">
+        Do you already have an account? <a href="../Login/login.html" class="text-gold hover:underline">Log in</a>
+      </p>
+    </div>
+  </div>
+  <div id="loading-screen" class="hidden fixed inset-0 bg-white flex flex-col items-center justify-center z-50">
+  <img src="../Images/MedSparkLogo2.png" alt="MedSpark Logo" class="w-28 animate-bounce">
+  <p class="mt-4 text-gray-700 font-semibold animate-pulse">Loading...</p>
+  <script>
+const duiInput = document.getElementById('dui');
+duiInput.addEventListener('input', (e) => {
+  let value = e.target.value.replace(/\D/g, '');
+  if (value.length > 9) value = value.slice(0, 9);
+  if (value.length > 8) value = value.slice(0, 8) + '-' + value.slice(8);
+  e.target.value = value;
+});
+  </script>
+ 
+</body>
+</html>
