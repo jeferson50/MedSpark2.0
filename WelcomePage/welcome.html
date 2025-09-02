@@ -27,7 +27,7 @@
       left: -75%;
       width: 50%;
       height: 100%;
-      background: linear-gradient(120deg, rgba(0,123,255,0.0) 0%, rgba(0,123,255,0.5) 50%, rgba(0,123,255,0.0) 100%);
+      background: linear-gradient(120deg, rgba(0,123,255,0.0) 0%, rgb(3, 71, 74)100% 50%, rgba(0,123,255,0.0) 100%);
       transform: skewX(-25deg);
     }
 
@@ -59,7 +59,7 @@
   </nav>
  
   <div class="flex gap-3 text-sm font-bold items-center">
-    <a href="Login.html" class="px-4 py-2 rounded-md bg-emerald-700 text-white hover:bg-emerald-800">Log In</a>
+    <a href="../Login/login.html" class="px-4 py-2 rounded-md bg-emerald-700 text-white hover:bg-emerald-800">Log In</a>
     <a href="#" onclick="startLoading()" 
        class="px-4 py-2 rounded-md border border-gray-300 hover:bg-gray-100 dark:border-gray-600 dark:hover:bg-gray-800 dark:text-gray-200">Sign in</a>
     <button id="darkModeToggle" 
@@ -73,7 +73,7 @@
 <center>
   <section class="relative max-w-3xl mx-auto mt-6 px-2">
     <div class="relative w-[500px] h-[500px] mx-auto">
-      <div id="animacion" class="w-full h-full"></div>
+      <div id="animacion" class="w-full h-full bg-none"></div>
     </div>
   </section>
 </center>
@@ -87,6 +87,7 @@
     autoplay: true,
     path: 'hospital(1).json'
   });
+  
 </script>
 
 <section id="benefits" class="max-w-6xl mx-auto px-4 mt-12">
@@ -175,7 +176,7 @@
 </footer>
 
 <!-- Loading Screen con logo -->
-<div id="loading-screen" class="hidden fixed inset-0 bg-white dark:bg-gray-900 flex flex-col items-center justify-center z-50">
+<div id="loading-screen" class="hidden fixed inset-0 bg-white dark:bg-gray-900 flex-col items-center justify-center z-50">
   <img src="../Images/MedSparkLogo2.png" alt="MedSpark Logo" class="w-28 animate-bounce">
   <p class="mt-4 text-gray-700 dark:text-gray-200 font-semibold animate-pulse">Loading...</p>
 </div>
@@ -184,7 +185,7 @@
   function startLoading() {
     document.getElementById("loading-screen").classList.remove("hidden");
     setTimeout(() => {
-      window.location.href = "choose-signup.html";
+      window.location.href = "../Directory/choose-signup.html";
     }, 3000);
   }
 
