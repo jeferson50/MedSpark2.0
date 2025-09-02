@@ -9,9 +9,8 @@
   <script src="https://cdn.jsdelivr.net/npm/@clerk/clerk-js@latest/dist/clerk.browser.js"></script>
 </head>
 <body class="bg-gray-100 font-sans">
- 
-   
- <nav class="bg-teal-950 shadow-md">
+  
+  <nav class="bg-teal-950 shadow-md">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16">
         <div class="flex items-center">
@@ -29,20 +28,43 @@
     </div>
   </nav>
  
-  <div class="flex justify-center items-center min-h-screen bg-gray-100">
-    <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
-      <h2 class="text-xl font-semibold text-center text-gray-900 mb-6">Login</h2>
-     
-      <form class="space-y-8">
-       
-        <input type="email" placeholder="Email" class="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-green-500">
-        <input type="password" placeholder="Password" class="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-green-500">
- 
-        <button type="submit" class="w-full bg-green-800 text-white py-2 rounded hover:bg-green-900">Login</button>
-      </form>
- 
+  <div class="flex items-center justify-center min-h-[calc(100vh-4rem)] bg-gradient-to-r from-blue-50 to-cyan-100">
+
+    <div class="bg-white p-8 rounded-2xl shadow-2xl w-96 text-center animate-fadeIn">
+      
+      <div class="flex justify-center mb-4">
+        <img src="https://cdn-icons-png.flaticon.com/512/4140/4140048.png"
+             alt="avatar"
+             class="w-20 animate-bounce">
+      </div>
+  
+      <h2 class="text-2xl font-bold mb-4 text-gray-700">Welcome back</h2>
+  
+    
+      <input type="email" placeholder="Email"
+        class="w-full px-4 py-2 mb-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-400 focus:outline-none" required>
+      
+      <input type="password" placeholder="Password"
+        class="w-full px-4 py-2 mb-4 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-400 focus:outline-none" required>
+      
+      <button onclick="startLoading()" href="../Home/Home.html"
+        class="w-full bg-blue-500 text-white py-2 rounded-lg font-semibold hover:bg-blue-600 transition" >
+        login
+      </button>
     </div>
   </div>
- 
+ <div id="loading-screen" class="hidden fixed inset-0 bg-white dark:bg-gray-900 flex flex-col items-center justify-center z-50">
+  <img src="../Images/MedSparkLogo2.png" alt="MedSpark Logo" class="w-28 animate-bounce">
+  <p class="mt-4 text-gray-700 dark:text-gray-200 font-semibold animate-pulse">Loading...</p>
+</div>
+
+<script>
+  function startLoading() {
+    document.getElementById("loading-screen").classList.remove("hidden");
+    setTimeout(() => {
+      window.location.href = "../Home/Home.html";
+    }, 3000);
+  }
+</script>
 </body>
 </html>
