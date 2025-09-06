@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Sent CashBack</title>
+</head>
+<body>
+    <h1>pay</h1>
+
+<form id="form-cashback" class = "py-4">
+    <div>
+        <label class="block font-medium">Clinic/Pharmacy</label>
+        <input type="text" id="place" class="border p-2 w-full" required>
+    </div>
+
+    <div>
+        <label class="block font-medium">Total purchase (USD)</label>
+        <input type="number" id="total-purchase" step="0.01" class="border p-2 w-full" required>
+    </div>
+
+    <div>
+        <label class="block font-medium">Cashback (%)</label>
+        <input type="number" id="Cashback" step="0.01" class="border p-2 w-full" required>
+    </div>
+
+    <button type="submit" class="bg-teal-700 text-white px-4 py-2 rounded">Save</button>
+</form>
+
+<script>
+    function mostrarCashback() {
+  let historial = JSON.parse(localStorage.getItem("cashbacks")) || [];
+  let tbody = document.getElementById("transaction-history");
+  let total = 0;
+
+  tbody.innerHTML = "";
+
+  historial.forEach((c) => {
+    let row = document.createElement("tr");
+    row.classList.add("border-b");
+
+    total += c.monto;
+
+    row.innerHTML = `
+      <td class="py-2">${c.fecha}</td>
+      <td>Compra en ${c.lugar} - ${c.porcentaje}% cashback de $${c.totalCompra.toFixed(2)}</td>
+      <td class="font-medium text-teal-700">+$${c.monto.toFixed(2)}</td>
+      <td><span class="text-green-600 font-medium">Completed</span></td>
+    `;
+
+    tbody.appendChild(row);
+  });
+
+  document.getElementById("total-balance").innerText = "$" + total.toFixed(2);
+}
+</script>
+
+</body>
+</html>
