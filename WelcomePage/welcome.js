@@ -1,12 +1,12 @@
 const darkModeToggle = document.getElementById("darkModeToggle");
 const body = document.body;
 
-// Cargar tema guardado
+
 if (localStorage.getItem("theme") === "dark") {
   body.classList.add("dark", "bg-gray-900", "text-gray-100");
 }
 
-// Toggle Dark Mode
+
 darkModeToggle.addEventListener("click", () => {
   body.classList.toggle("dark");
   body.classList.toggle("bg-gray-900");
@@ -24,7 +24,7 @@ navLinks.forEach(link => {
   });
 });
 
-// Fade-in scroll animation
+
 const faders = document.querySelectorAll('.fade-in');
 const appearOptions = { threshold: 0.2, rootMargin: "0px 0px -50px 0px" };
 const appearOnScroll = new IntersectionObserver(function(entries, observer){
