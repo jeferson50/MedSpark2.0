@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Promotions</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'midnight-green': '#03474a',
+            'gamboge': '#e4981e',
+            'silver': '#9E9B9D',
+            'gold': '#B47A0E',
+            'sky-blue': '#03898E45',
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-gray-100 min-h-screen">
+ 
+<nav class="bg-indigo-950">
+    <div class="max-w-9xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <div class="flex items-center">
+          <div class="hidden md:block">
+          </div>
+          <span class="text-x font-bold">
+      <span class="text-3xl text-white">Med</span><span class="text-3xl text-cyan-400">Spark</span>
+    </span>
+        </div>
+
+        <div class="hidden md:block">
+          <div class="ml-10 flex items-baseline px-20">
+            <a href="../Directory/Directory.html" class="flex items-center gap-2 text-white hover:text-yellow-500">
+       <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transition duration-300 group-hover:text-yellow-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+    d="M12 11.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zm0 9.5c-4.418 0-8-4.03-8-9a8 8 0 1116 0c0 4.97-3.582 9-8 9z" />
+</svg>
+        Directory
+      </a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="../Home/Home.html" class="flex items-center gap-2 text-white hover:text-yellow-500">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 1.343-3 3v1H7l4 4 4-4h-2v-1c0-.552.448-1 1-1h3a1 1 0 011 1v5a1 1 0 01-1 1H6a1 1 0 01-1-1V11a5 5 0 015-5h1" />
+        </svg>
+        Refunds
+      </a>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="../WelcomePage/welcome.html" class="flex items-center gap-2 text-white hover:text-yellow-500">
+  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+      d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+  </svg>
+  About Us
+</a>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="../Products/feature-products.html" class="flex items-center gap-2 text-white hover:text-yellow-500">
+  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+      d="M3 3h18v6H3V3zm0 12h18v6H3v-6zM3 9h18v2H3V9z" />
+  </svg>
+  Products
+</a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="#" class="flex items-center gap-2 text-white hover:text-yellow-500">
+  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+      d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14m0-4v8m-6-8v8m-4-4h16" />
+  </svg>
+  Promotions
+</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+ 
+<div class="max-w-6xl mx-auto p-6">
+    <h1 class="text-3xl font-bold text-gray-900 mb-8 p-8">Available Promotions</h1>
+ 
+    <div id="promoList" class="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"></div>
+</div>
+ 
+ <script>
+    function loadPromos(){
+      let promos = JSON.parse(localStorage.getItem("promotions")) || [];
+      let container = document.getElementById("promoList");
+      container.innerHTML = "";
+
+      promos.forEach(promo => {
+        container.innerHTML += `
+          <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition">
+            <img src="${promo.image}" alt="Promo" class="w-full h-40 object-cover">
+            <div class="p-4">
+              <h3 class="text-xl font-semibold text-blue-600">${promo.price}</h3>
+              <p class="text-gray-700 mt-2">${promo.description}</p>
+            </div>
+          </div>
+        `;
+      });
+    }
+
+    loadPromos();
+  </script>
+</body>
+</html>

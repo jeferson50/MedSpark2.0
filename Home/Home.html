@@ -22,31 +22,53 @@
 <body>
 <div class="flex min-h-screen bg-gray-100">
 
-  <aside class="w-64 bg-teal-950 p-6 shadow">
-    <h2 class="text-xl font-bold mb-6 text-white">MedSpark</h2>
+  <aside class="w-64 bg-indigo-950 p-6 shadow">
+     <span class="text-x font-bold">
+      <span class="text-3xl text-white">Med</span><span class="text-3xl text-cyan-400">Spark</span>
+    </span>
+    <br>
+    <br>
     <nav class="space-y-4 text-gray-700">
-      <a href="../Directory/Directory.html" class="flex items-center gap-2 text-white hover:text-blue-500">
- 
+      <a href="../Directory/Directory.html" class="flex items-center gap-2 font-semibold text-white hover:text-yellow-500">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9.75L12 3l9 6.75V21a1.5 1.5 0 01-1.5 1.5H4.5A1.5 1.5 0 013 21V9.75z" />
         </svg>
         Directory
       </a>
-      <a href="" class="flex items-center gap-2 font-semibold text-blue-600">
+
+      <a href="" class="flex items-center gap-2 font-semibold text-white hover:text-yellow-500">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 1.343-3 3v1H7l4 4 4-4h-2v-1c0-.552.448-1 1-1h3a1 1 0 011 1v5a1 1 0 01-1 1H6a1 1 0 01-1-1V11a5 5 0 015-5h1" />
         </svg>
         Refunds
       </a>
   
-      <a href="../Accounts/feature-accounts.html" class="flex items-center gap-2 text-white hover:text-blue-500">
+      <a href="../Accounts/feature-accounts.html" class="flex items-center gap-2  text-white hover:text-yellow-500">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A9.004 9.004 0 0112 15c2.21 0 4.21.805 5.879 2.121M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
         </svg>
         Accounts
       </a>
+
+      <a href="../Products/feature-products.html" class="flex items-center gap-2 text-white hover:text-yellow-500">
+  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+      d="M3 3h18v6H3V3zm0 12h18v6H3v-6zM3 9h18v2H3V9z" />
+  </svg>
+  Products
+</a>
+
+<!-- Promotions -->
+<a href="../PromotionsU/index.html" class="flex items-center gap-2 text-white hover:text-yellow-500">
+  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+      d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14m0-4v8m-6-8v8m-4-4h16" />
+  </svg>
+  Promotions
+</a>
     </nav>
   </aside>
+
 
   <main class="flex-1 p-8">
     <h1 class="text-2xl font-bold mb-4">CashBack</h1>
@@ -54,7 +76,7 @@
     <div class="bg-white p-6 rounded shadow mb-6">
       <h2 class="text-lg font-semibold mb-2">Refund balance</h2>
       <p class="text-gray-500 mb-1">Available balance</p>
-      <p id="total-balance" class="text-2xl font-bold text-teal-700">$0.00</p>
+      <p id="total-balance" class="text-2xl font-bold text-indigo-700">$0.00</p>
     </div>
 
     <div class="bg-white p-6 rounded shadow">
@@ -91,7 +113,7 @@ function mostrarCashback() {
     row.innerHTML = `
       <td class="py-2">${c.fecha}</td>
       <td>Compra en ${c.lugar} - ${c.porcentaje}% de $${c.totalCompra.toFixed(2)}</td>
-      <td class="font-medium text-teal-700">+$${c.monto.toFixed(2)}</td>
+      <td class="font-medium text-indigo-700">+$${c.monto.toFixed(2)}</td>
       <td><span class="text-green-600 font-medium">Completed</span></td>
     `;
 

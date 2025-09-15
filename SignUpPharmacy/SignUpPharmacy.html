@@ -35,24 +35,23 @@
     src="https://cdn.jsdelivr.net/npm/@clerk/clerk-js@latest/dist/clerk.browser.js">
   </script>
 </head>
-<body class="bg-sky-blue">
+<body class="bg-white">
 
-  <nav class="bg-midnight-green">
+  <nav class="bg-indigo-950">
     <div class="max-w-9xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16">
         <div class="flex items-center">
           <div class="hidden md:block">
             <a href="../WelcomePage/Welcome.html" class="font-bold text-xl text-white">
-              <img src="../Images/MedSparkLogo2.png" alt="MedSpark Logo" class="w-24 h-10 sm:h-12 md:h-14 lg:h-16 xl:h-24 object-contain mr-3">
             </a>
           </div>
-          <a href="../WelcomePage/Welcome.html" class="font-bold text-xl text-white">MedSpark</a>
+          <span class="text-x font-bold">
+      <span class="text-3xl text-white">Med</span><span class="text-3xl text-cyan-400">Spark</span>
+    </span>
         </div>
         <div class="hidden md:block">
           <div class="ml-10 flex items-baseline space-x-4">
-            <a href="../WelcomePage/Welcome.html" class="group text-white transition duration-300 hover:text-silver">Services<span class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-silver"></span></a>
-            <a href="#" class="group text-white transition duration-300 hover:text-silver">About<span class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-silver"></span></a>
-            <a href="#" class="group text-white transition duration-300 hover:text-silver">Contact<span class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-silver"></span></a>
+            <a href="#" class="group text-white transition duration-300 hover:text-silver">About Us<span class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-silver"></span></a>
             <a href="../Login/login.html"
             class="bg-gamboge text-white px-3 py-2 rounded-md text-sm font-medium hover:bg-gold">Login</a>
           </div>
@@ -68,11 +67,11 @@
     </div>
     <div class="flex flex-row justify-between items-center gap-12 px-4 max-w-6xl mx-auto">
       
-      <div class="bg-white p-8 rounded-2xl shadow-2xl w-full lg:w-1/2 text-left flex flex-col">
+      <div class="bg-indigo-950 p-8 rounded-2xl shadow-2xl w-full lg:w-1/2 text-left flex flex-col">
         <div class="flex justify-center mb-4">
           <img src="../Images/Avatar.png" alt="avatar" class="w-20">
         </div>
-        <h2 class="text-2xl font-bold mb-4 text-black flex justify-center">Welcome</h2>
+        <h2 class="text-2xl font-bold mb-4 text-white flex justify-center">Welcome</h2>
 
         <!-- Aquí se monta el componente de Clerk -->
         <div id="sign-up"></div>
